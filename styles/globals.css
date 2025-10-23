@@ -1,59 +1,52 @@
-import Head from 'next/head'
-import Link from 'next/link'
-import ProfileHeader from '../components/ProfileHeader'
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-const projects = [
-  {
-    title: "Brand Identity",
-    category: "design",
-    slug: "brand_identity",
-    thumbnail: "/img/brand_identity_1.jpg"
-  },
-  {
-    title: "Nepal Trip",
-    category: "photography",
-    slug: "nepal_trip",
-    thumbnail: "/img/nepal_trip_1.jpg"
-  },
-  {
-    title: "Event Reel",
-    category: "videography",
-    slug: "event_reel",
-    thumbnail: "/img/event_reel_1.jpg"
-  }
-]
+/* Custom base tweaks */
+body {
+  @apply bg-white text-black font-sans;
+}
 
-export default function Home() {
-  return (
-    <>
-      <Head><title>Sushan's Portfolio</title></Head>
-      <main className="max-w-4xl mx-auto px-4 py-6">
-        <ProfileHeader />
-        <div className="flex justify-center gap-4 text-sm font-medium mt-6 mb-4">
-          <button className="hover:underline">All</button>
-          <button className="hover:underline">Design</button>
-          <button className="hover:underline">Photography</button>
-          <button className="hover:underline">Videography</button>
-        </div>
-        <div className="grid grid-cols-3 gap-2">
-          {projects.map((project, index) => (
-            <Link key={index} href={`/project/${project.category}/${project.slug}`}>
-              <img
-                src={project.thumbnail}
-                alt={project.title}
-                className="w-full h-full object-cover rounded aspect-square hover:opacity-90 transition"
-              />
-            </Link>
-          ))}
-        </div>
-        <div className="mt-10 text-center text-gray-700">
-          <h2 className="text-xl font-semibold mb-2">About Me</h2>
-          <p>
-            I’m Sushan — a visual storyteller, Graphics designer, photographer, and videographer.
-          </p>
+a {
+  @apply text-inherit no-underline;
+}
 
-        </div>
-      </main>
-    </>
-  )
-}/* Add your global styles here */
+img {
+  @apply object-cover;
+}
+
+/* ProfileHeader component custom style if needed */
+.profile-avatar {
+  @apply w-20 h-20 rounded-full border-2 border-gray-300;
+}
+
+.profile-name {
+  @apply text-xl font-bold mt-2;
+}
+
+.profile-bio {
+  @apply text-sm text-gray-500;
+}
+
+/* Buttons (categories) */
+button {
+  @apply px-3 py-1 rounded-md transition duration-200;
+}
+
+button:hover {
+  @apply underline;
+}
+
+/* Post image grid */
+.grid-cols-3 img {
+  @apply rounded aspect-square transition duration-200 hover:opacity-90;
+}
+
+/* Project post view (individual) */
+.project-slide {
+  @apply w-full max-w-md;
+}
+
+.caption-text {
+  @apply text-sm text-gray-600 mt-2;
+}
