@@ -49,9 +49,9 @@ export default function Home() {
         <div className="mt-10 text-center text-gray-700">
           <h2 className="text-xl font-semibold mb-2">About Me</h2>
           <p>
-            I’m Sushan — a visual storyteller with a passion for design, photography, and videography.
-            Based in London. This portfolio is a creative window into my universe.
+            I’m Sushan — a visual storyteller, Graphics designer, photographer, and videographer.
           </p>
+
         </div>
       </main>
     </>
